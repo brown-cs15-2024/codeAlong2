@@ -2,31 +2,27 @@ package codeAlong2;
 
 public class Restaurant {
     private Chef mainChef;
-    //TODO: declare another Chef instance variable
+    private Chef sousChef;
     public Restaurant() {
-        // TODO : uncomment this line once the Chef class has a constructor!
-        //this.mainChef = new Chef("Andy");
-        // TODO: create the other chef (initialize and instantiate)
+        this.mainChef = new Chef("Andy");
+        this.sousChef = new Chef("Effie");
         this.createMenu();
     }
     public void createMenu(){
         this.mainChef.setSignatureDish("cookies");
-        //TODO: uncomment this line once you've made this method in Chef()!
-        //this.mainChef.setSignaturePrice(6);
+        this.mainChef.setSignaturePrice(6);
 
-        // TODO: use the getters and setters to add the other chefs signature dish
-
+        this.sousChef.setSignatureDish("chicken parm");
+        this.sousChef.setSignaturePrice(30);
     }
 
     public void seeMenu(){
-        // TODO: Uncomment this line
-        //System.out.println(this.mainChef.getSignatureDish() + ", "+ this.mainChef.getSignaturePrice());
-        // TODO: use the getters to print out the sous chefs signature dish
-        // TODO: add another dish to the menu
-        System.out.println("");
+        System.out.println(this.mainChef.getSignatureDish() + ", "+ this.mainChef.getSignaturePrice());
+        System.out.println(this.sousChef.getSignatureDish() + ", "+ this.sousChef.getSignaturePrice());
+        System.out.println("pasta, 20");
 
-        // TODO: have our 2 chefs cook something
-        System.out.println("");
+        this.sousChef.cook(this.sousChef.getSignatureDish());
+        this.mainChef.cook("pasta");
 
     }
 }
