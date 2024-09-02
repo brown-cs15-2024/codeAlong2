@@ -3,6 +3,7 @@ package codeAlong2;
 public class Restaurant {
     private Chef mainChef;
     private Chef sousChef;
+
     public Restaurant() {
         this.mainChef = new Chef("Andy");
         this.sousChef = new Chef("Effie");
@@ -21,8 +22,8 @@ public class Restaurant {
         System.out.println(this.sousChef.getSignatureDish() + ", "+ this.sousChef.getSignaturePrice());
         System.out.println("pasta, 20");
 
-        this.sousChef.cook(this.sousChef.getSignatureDish());
         this.mainChef.cook("pasta");
-
+        this.sousChef.cook(this.sousChef.getSignatureDish());
+        this.mainChef.cook(this.mainChef.getSignatureDish());
     }
 }
